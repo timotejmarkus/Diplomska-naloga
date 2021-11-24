@@ -211,8 +211,8 @@ void success_tone()
 
 void danger_tone()
 {
-  for(int i=0;i<10;i++){
-    tone(3,300);
+  for(int i=0;i<20;i++){
+    tone(3,1000);
     delay(100);
     tone(3,300);
     delay(100);
@@ -258,7 +258,12 @@ void auto_sensor() {
       digitalWrite(13, LOW); //set digital 13 to low level, LED is off 
     }
 
-  }
+  }  else{
+    digitalWrite(13, LOW);
+    digitalWrite(7, LOW);
+      digitalWrite(6, HIGH);
+    }
+    
   water = analogRead(A3);//assign the analog value of A3 to variable water
   if (water > 800)
     // if variable water is larger than 800

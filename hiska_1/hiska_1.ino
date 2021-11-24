@@ -223,7 +223,7 @@ void danger_tone()
 //detect gas
 void auto_sensor() {
   gas = analogRead(A0);//assign the analog value of A0 to gas
-  if (gas > 700) {
+  if (gas > 50) {
 //if variable gas>700
     flag = 1;//set variable flag to 1
     while (flag == 1)

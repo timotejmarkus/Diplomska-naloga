@@ -92,7 +92,7 @@ void setup() {
   mylcd.backlight();//initialize LCD
   //LCD shows "passcord:" at first row and column
   mylcd.setCursor(1 - 1, 1 - 1);
-  mylcd.print("passcord:");
+  mylcd.print("Geslo:");
   
   servo_9.attach(9);//make servo connect to digital 9
   servo_10.attach(10);//make servo connect to digital 10

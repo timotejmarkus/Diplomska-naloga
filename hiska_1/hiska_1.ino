@@ -404,12 +404,12 @@ pass = String(pass) + String(".");//set pass
     delay(10);
     if (button2 == 0)//if variablebutton2 is 0
     {
-      if (passwd == ".--.-.")//if passwd is ".--.-."
+      if (passwd == "-.-")//if passwd is ".--.-."
       {
         mylcd.clear();//clear LCD screen
         //LCD shows "open!" at first character on second row
         mylcd.setCursor(1 - 1, 2 - 1);
-        mylcd.print("open!");
+        mylcd.print("Sezam odpri se!");
         servo_9.write(100);//set servo connected to digital 9 to 100°
         delay(300);
         delay(5000);

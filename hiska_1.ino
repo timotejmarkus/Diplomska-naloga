@@ -70,43 +70,18 @@ int tonepin = 3; //set the signal end of passive buzzer to digital 3
 //set sound play frequency
 int tune[] =
 {
-  M3, M3, M4, M5,
-  M5, M4, M3, M2,
-  M1, M1, M2, M3,
-  M3, M2, M2,
-  M3, M3, M4, M5,
-  M5, M4, M3, M2,
-  M1, M1, M2, M3,
-  M2, M1, M1,
-  M2, M2, M3, M1,
-  M2, M3, M4, M3, M1,
-  M2, M3, M4, M3, M2,
-  M1, M2, D5, D0,
-  M3, M3, M4, M5,
-  M5, M4, M3, M4, M2,
-  M1, M1, M2, M3,
-  M2, M1, M1
+  D4, H7,D4, H7,D4, H7,D4, H7,D4, H7,D4, H7,D4, H7,D4, H7,D4, H7,D4, H7
 };
 
 //set music beat
 float durt[] =
 {
+   1, 1, 1, 1,
   1, 1, 1, 1,
-  1, 1, 1, 1,
-  1, 1, 1, 1,
-  1 + 0.5, 0.5, 1 + 1,
-  1, 1, 1, 1,
-  1, 1, 1, 1,
-  1, 1, 1, 1,
-  1 + 0.5, 0.5, 1 + 1,
-  1, 1, 1, 1,
-  1, 0.5, 0.5, 1, 1,
-  1, 0.5, 0.5, 1, 1,
-  1, 1, 1, 1,
-  1, 1, 1, 1,
-  1, 1, 1, 0.5, 0.5,
-  1, 1, 1, 1,
-  1 + 0.5, 0.5, 1 + 1,
+  1, 1
+  
+ 
+ 
 };
 
 

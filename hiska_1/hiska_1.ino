@@ -204,13 +204,20 @@ void loop() {
 void success_tone()
 {
   for(int i=0;i<10;i++){
+    tone(3,300+i*50);
+    delay(100);
+  }
+}
+
+void danger_tone()
+{
+  for(int i=0;i<10;i++){
+    tone(3,300);
+    delay(100);
     tone(3,300);
     delay(100);
   }
-
-  
 }
-
 
 
 //detect gas
@@ -222,19 +229,10 @@ void auto_sensor() {
     while (flag == 1)
       //if flag is 1, program will circulate
     {
-      Serial.println("danger");//output "danger" in new lines
-      tone(3, 440);
-      delay(125);
-      delay(100);
-      noTone(3);
-      delay(100);
-      tone(3, 440);
-      delay(125);
-      delay(100);
-      noTone(3);
-      delay(300);
+      Serial.println("Nevarnost zadušitve!");//output "danger" in new lines
+      danger_tone();
       gas = analogRead(A0);//gas analog the value of A0 to gas
-      if (gas < 100)  //if variable gas is less than 100
+      if (gas < 30)  //if variable gas is less than 100
       {
         flag = 0;//set variable flag to 0
         break;//exit loop exist to loop

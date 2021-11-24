@@ -244,11 +244,13 @@ void auto_sensor() {
   {
     noTone(3);// digital 3 stops playing music
   }
+
+
+  
   light = analogRead(A1);////Assign the analog value of A1 to light
   if (light < 300)//if variable light is less than 300
 
   {
-    fan_stop ();
     infrar = digitalRead(2);//assign the value of digital 2 to infrar 
     Serial.println(infrar);//output the value of variable infrar in new lines
     if (infrar == 1)
@@ -260,9 +262,10 @@ void auto_sensor() {
       digitalWrite(13, LOW); //set digital 13 to low level, LED is off 
     }
 
-  }  else{fan_start();
-    
-  }
+  } 
+
+
+  
   water = analogRead(A3);//assign the analog value of A3 to variable water
   if (water > 800)
     // if variable water is larger than 800
@@ -271,11 +274,11 @@ void auto_sensor() {
     while (flag2 == 1)
       // if flag2 is 1, program will circulate
     {
-      Serial.println("rain");//output "rain" in new lines
+      Serial.println("Dež");//output "rain" in new lines
       servo_10.write(180);// set the servo connected to digital 10 to 180°
       delay(300);//delay in 300ms
       delay(100);
-      water = analogRead(A3);;//assign the analog value of A3 to variable water
+      water = analogRead(A3);//assign the analog value of A3 to variable water
       if (water < 30)// if variable water is less than 30
       {
         flag2 = 0;// set flag2 to 0
@@ -384,20 +387,20 @@ pass = String(pass) + String(".");//set pass
         mylcd.clear();//clear LCD screen
         //LCD shows "password:"at first character on first row
         mylcd.setCursor(1 - 1, 1 - 1);
-        mylcd.print("password:");
+        mylcd.print("Geslo:");
 
       } else //Otherwise
       {
         mylcd.clear();//clear LCD screen
         //LCD shows "error!"at first character on first row
         mylcd.setCursor(1 - 1, 1 - 1);
-        mylcd.print("error!");
+        mylcd.print("Napaka v geslu!");
         passwd = "";
         pass = "";
         delay(2000);
         //LCD shows "again" at first character on first row
         mylcd.setCursor(1 - 1, 1 - 1);
-        mylcd.print("again");
+        mylcd.print("Vnesite ponovno!");
       }
     }
   }
@@ -444,26 +447,10 @@ void music1() {
 }
 //Ode to joy
 void music2() {
-  Ode_to_Joy();
+  danger_tone();
 }
-void Ode_to_Joy()//play Ode to joy song
-{
-  for (int x = 0; x < length; x++)
-  {
-    tone(tonepin, tune[x]);
-    delay(300 * durt[x]);
-  }
-}
-void fan_start(){
-  digitalWrite (7, HIGH);
-   digitalWrite (6, LOW);
-   
-   }
-   void fan_stop(){
-  digitalWrite (7, LOW);
-   digitalWrite (6, LOW); 
-   
-   }
+
+
 //PWM control
 void pwm_control() {
   switch (val)

@@ -143,7 +143,7 @@ void loop() {
 
       break;//exit loop
     case 'e'://if val is character 'e'，program will circulate
-      music1();//play birthday song
+      music1();//play success_tone song
       break;//exit loop
     case 'f'://if val is character 'f'，program will circulate
       music2();//play ode to joy song
@@ -200,11 +200,11 @@ void loop() {
   }
 }
 
-////////////////////////set birthday song//////////////////////////////////
-void birthday()
+////////////////////////set success_tone song//////////////////////////////////
+void success_tone()
 {
   for(int i=0;i<10;i++){
-    tone(3,300+i*50);
+    tone(3,300);
     delay(100);
   }
 
@@ -421,10 +421,10 @@ pass = String(pass) + String(".");//set pass
         mylcd.clear();//clear LCD screen
         //LCD shows "password:" at the first character on first row
         mylcd.setCursor(1 - 1, 1 - 1);
-        mylcd.print("password:");
+        mylcd.print("Geslo:");
         //LCD shows "wait" at the first character on first row
         mylcd.setCursor(1 - 1, 1 - 1);
-        mylcd.print("wait");
+        mylcd.print("Počakaj!");
       } else//Otherwise
       {
         noTone(3);//digital 3 stops playing music
@@ -436,9 +436,9 @@ pass = String(pass) + String(".");//set pass
   btn2_num = 0;//set btn2_num to 0
 }
 
-// Birthday song
+// success_tone song
 void music1() {
-  birthday();
+  success_tone();
 }
 //Ode to joy
 void music2() {
